@@ -12,11 +12,11 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 // Include the script from http://npr.github.io/responsiveiframe/
 function responsive_iframes_enqueue_script() {
-  wp_enqueue_script( 'iframes', 'https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js', array ( 'jquery' ), 1.1);
+  wp_enqueue_script( 'iframes', plugin_dir_url( __FILE__ ) . 'jquery.responsiveiframe.js', array ( 'jquery' ), 1.1);
 }
 add_action('wp_enqueue_scripts', 'responsive_iframes_enqueue_script');
 
-// If there's a problem retrieving the js file, use this as the source instead: plugin_dir_url( __FILE__ ) . 'jquery.responsiveiframe.js',
+// This is the CDN link: 'https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js'. If there's a problem retrieving the js file, use this as the source instead: plugin_dir_url( __FILE__ ) . 'jquery.responsiveiframe.js',
 
 add_action('wp_head','responsive_iframes');
 function responsive_iframes() { ?>
