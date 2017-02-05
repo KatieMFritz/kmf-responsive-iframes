@@ -21,10 +21,10 @@ add_action('wp_enqueue_scripts', 'responsive_iframes_enqueue_script');
 add_action('wp_head','responsive_iframes');
 function responsive_iframes() { ?>
   <script>
-    ;(function($){
-    $(function(){
-    $('.iframe').responsiveIframe({ xdomain: '*'});
-    });
-    })(jQuery);
+    (function ($) {
+      $(function () {
+        $('.iframe').responsiveIframe({xdomain: '*'})
+      })
+    })(jQuery)
   </script>
 <?php }
