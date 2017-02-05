@@ -15,18 +15,18 @@ For this to work, you must be able to add JavaScript code to the "child page" (t
   - Copy the public file path or link.
 3. **Add code to child site:**
   - Add the following code to your _child_ website (in the header, footer, or a "Global JavaScript" section).
-    ```js
-    <script src="[file path you copied for iframes-child.js]"></script>
-    ```
+  ```js
+  <script src="[file path you copied for iframes-child.js]"></script>
+  ```
 
 ## How do I add an iframe to a page on my website?
 Once you've installed everything:
 
 1. Copy the URL for the page you want to embed (the child page).
 2. In your WordPress page or post, go to the text editor (_not_ the visual editor) and paste the following code:
-    ```html
-    <iframe class="iframe" src="[URL OF CHILD PAGE]"></iframe>
-    ```
+  ```html
+  <iframe class="iframe" src="[URL OF CHILD PAGE]"></iframe>
+  ```
 
 ## MIT License
 Copyright 2017 [Katie Fritz](http://katiemfritz.com).
