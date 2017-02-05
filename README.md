@@ -15,9 +15,9 @@ For this to work, you must be able to add JavaScript code to the "child page" (t
   - Copy the public file path or link.
 3. **Add code to child site:**
   - Add the following code to your _child_ website (in the header, footer, or a "Global JavaScript" section).
-     ```js
-      <script src="[file path you copied for iframes-child.js]"></script>
-      ```
+    ```js
+    <script src="[file path you copied for iframes-child.js]"></script>
+    ```
 
 ## How do I add an iframe to a page on my website?
 Once you've installed everything:

@@ -1,11 +1,13 @@
 <?php
 /*
-Plugin Name: Responsive iframes
+Plugin Name: KMF responsive iframes
+Plugin URI: https://github.com/KatieMFritz/wp-responsive-iframes
 Description: Applying NPR's responsive iframes code
 Version:     20170112
 Author:      Katie M Fritz
 Author URI:  http://katiemfritz.com
 License:     MIT
+License URI: https://opensource.org/licenses/MIT
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
