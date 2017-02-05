@@ -1,2 +1,2 @@
-var ri = responsiveIframe();
-ri.allowResponsiveEmbedding();
+var ri = responsiveIframe()
+ri.allowResponsiveEmbedding()

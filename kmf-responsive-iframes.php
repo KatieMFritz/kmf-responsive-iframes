@@ -16,11 +16,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 function responsive_iframes_enqueue_script() {
   wp_enqueue_script( 'iframes', plugin_dir_url( __FILE__ ) . 'jquery.responsiveiframe.js', array ( 'jquery' ), 1.1);
 }
-add_action('wp_enqueue_scripts', 'responsive_iframes_enqueue_script');
 
-// This is the CDN link: 'https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js'. If there's a problem retrieving the js file, use this as the source instead: plugin_dir_url( __FILE__ ) . 'jquery.responsiveiframe.js',
-
-add_action('wp_head','responsive_iframes');
 function responsive_iframes() { ?>
   <script>
     (function ($) {
@@ -30,3 +26,12 @@ function responsive_iframes() { ?>
     })(jQuery)
   </script>
 <?php }
+
+// Only load the scripts on certain pages, so you don't slow down other pages unnecessarily.
+add_action('template_redirect', 'plugin_is_page');
+function plugin_is_page() {
+  if (!is_page()) { // change the conditional if needed
+    add_action('wp_enqueue_scripts', 'responsive_iframes_enqueue_script');
+    add_action('wp_head','responsive_iframes');
+  }
+}
