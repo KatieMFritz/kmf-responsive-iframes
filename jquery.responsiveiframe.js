@@ -1,6 +1,7 @@
 /*! jQuery ResponsiveIframe - v0.0.2 - 2012-09-28
 * https://github.com/npr/responsiveiframe
-* Copyright (c) 2012 inadarei; Licensed MIT, GPL */
+* Copyright (c) 2012 inadarei; Licensed MIT, GPL
+* Edited by Katie M Fritz */
 console.log('responsive!')
 
 if (typeof jQuery !== 'undefined') {
@@ -28,10 +29,11 @@ if (typeof jQuery !== 'undefined') {
             }
           } else {
             setInterval(function () {
-              var hash = window.location.hash, matches = hash.match(/^#h(\d+)(s?)$/)
+              var hash = window.location.hash
+              var matches = hash.match(/^#h(\d+)(s?)$/)
               if (matches) {
                 privateMethods.setHeight($this, matches[1])
-                if(matches[2] === 's') {
+                if (matches[2] === 's') {
                   scroll(0, 0)
                 }
               }
@@ -43,37 +45,37 @@ if (typeof jQuery !== 'undefined') {
 
     var privateMethods = {
       messageHandler: function (elem, e) {
-        var height,
-          r,
-          matches,
-          strD
+        var height
+        var r
+        var matches
+        var strD
 
         if (settings.xdomain !== '*') {
-          var regex = new RegExp(settings.xdomain + '$'),
-              checkMatch = matches.length
+          var regex = new RegExp(settings.xdomain + '$')
+          var checkMatch = matches.length
           matches = e.origin.match(regex)
         }
 
-        if(settings.xdomain === '*' || matches.length === 1) {
+        if (settings.xdomain === '*' || matches.length === 1) {
           strD = e.data + ''
           r = strD.match(/^(\d+)(s?)$/)
-          if(r && r.length === 3) {
+          if (r && r.length === 3) {
             height = parseInt(r[1], 10)
-            if(!isNaN(height)) {
+            if (!isNaN(height)) {
               try {
                 privateMethods.setHeight(elem, height)
               } catch (ex) {}
             }
-            if(r[2] === 's') {
+            if (r[2] === 's') {
               scroll(0, 0)
             }
           }
         }
       },
 
-      // Sets the height of the iframe
-      setHeight : function (elem, height) {
-        elem.css('height', height + 150 + 'px')
+      // Sets the height of the iframe, with 150px extra padding
+      setHeight: function (elem, height) {
+        elem.css('height', height + 50 + 'px')
       },
       getDocHeight: function () {
         var D = document
@@ -99,9 +101,9 @@ if (typeof jQuery !== 'undefined') {
 }
 
 (function () {
-  var self,
-      module,
-      ResponsiveIframe = function () { self = this }
+  var self
+  var module
+  var ResponsiveIframe = function () { self = this }
 
   ResponsiveIframe.prototype.allowResponsiveEmbedding = function () {
     window.addEventListener('load', self.messageParent, false)
@@ -110,7 +112,7 @@ if (typeof jQuery !== 'undefined') {
 
   ResponsiveIframe.prototype.messageParent = function (scrollTop) {
     var h = document.body.offsetHeight
-    h = (scrollTop)? h + 's':h
+    h = scrollTop ? h + 's' : h // might have messed this up
     if (top.postMessage) {
       top.postMessage(h, '*')
     } else {
@@ -123,7 +125,7 @@ if (typeof jQuery !== 'undefined') {
   }
 
   // expose
-  if ('undefined' === typeof exports) {
+  if (typeof exports === 'undefined') {
     window.responsiveIframe = responsiveIframe
   } else {
     module.exports.responsiveIframe = responsiveIframe
