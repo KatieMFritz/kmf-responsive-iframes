@@ -1,5 +1,5 @@
 /*! jQuery ResponsiveIframe - v0.0.2 - 2012-09-28
-* https://github.com/npr/responsiveiframe
+* Original source: https://github.com/npr/responsiveiframe
 * Copyright (c) 2012 inadarei; Licensed MIT, GPL
 * Edited by Katie M Fritz */
 console.log('responsive!')
