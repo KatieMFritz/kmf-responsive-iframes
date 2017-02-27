@@ -23,10 +23,11 @@ For this to work, you must be able to add JavaScript code to the "child page" (t
 Once you've installed everything:
 
 1. Copy the URL for the page you want to embed (the child page).
-2. In your WordPress page or post, go to the text editor (_not_ the visual editor) and paste the following code:
-  - ```html
-    <iframe class="iframe" src="[URL OF CHILD PAGE]"></iframe>
-    ```
+2. **Add code to WordPress page/post**
+  - In your WordPress page or post, go to the text editor (_not_ the visual editor) and paste the following code.
+  ```html
+  <iframe class="iframe" src="[URL OF CHILD PAGE]"></iframe>
+  ```
 
 ## MIT License
 Copyright 2017 [Katie Fritz](http://katiemfritz.com).
