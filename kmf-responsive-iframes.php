@@ -3,7 +3,7 @@
 Plugin Name: KMF responsive iframes
 Plugin URI: https://github.com/KatieMFritz/wp-responsive-iframes
 Description: Applying NPR's responsive iframes code
-Version:     20170112
+Version:     20170227
 Author:      Katie M Fritz
 Author URI:  http://katiemfritz.com
 License:     MIT

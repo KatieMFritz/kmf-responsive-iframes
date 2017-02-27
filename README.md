@@ -1,4 +1,4 @@
-# Responsive iframes WordPress plugin v20170205
+# Responsive iframes WordPress plugin v20170227
 
 ## What does this plugin do?
 It makes iframes (embedded webpages) automatically show up as their natural height, rather than scrolling.
